@@ -56,15 +56,4 @@ Sistema web completo para cadastro de usuários, livros, empréstimos e devoluç
 
 ## Organização
 - Blueprints: auth, livros, api
-- Modelos: Usuario, Livro, Emprestimo
-
-## Screenshots
-Adicione aqui prints das principais telas do sistema (login, livros, empréstimos, devolução, API via Postman, etc).
-
-## Observações
-- Para usar MySQL/PostgreSQL, configure o banco e ajuste o `DATABASE_URL`.
-- O sistema está pronto para produção, mas recomenda-se usar um servidor WSGI (ex: Gunicorn) e HTTPS.
-
----
-
-Desenvolvido para IFSP - DevWeb3
+- Modelos: Cadastro de Usuario, Login, cadastro de Livro, Emprestimo, Devolução
