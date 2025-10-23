@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Empréstimos{% endblock %}
+{% block content %}
+<h2>Empréstimos</h2>
+<a href="{{ url_for('livros.novo_emprestimo') }}">Novo Empréstimo</a>
+<table border="1">
+    <tr><th>Usuário</th><th>Livro</th><th>Data Empréstimo</th><th>Data Devolução</th><th>Status</th><th>Ações</th></tr>
+    {% for e in emprestimos %}
+    <tr>
+        <td>{{ e.usuario.username }}</td>
+        <td>{{ e.livro.titulo }}</td>
+        <td>{{ e.data_emprestimo.strftime('%d/%m/%Y') }}</td>
+        <td>{% if e.data_devolucao %}{{ e.data_devolucao.strftime('%d/%m/%Y') }}{% else %}-{% endif %}</td>
+        <td>{% if e.devolvido %}Devolvido{% else %}Em aberto{% endif %}</td>
+        <td>
+            {% if not e.devolvido %}
+            <a href="{{ url_for('livros.devolver_emprestimo', id=e.id) }}">Registrar Devolução</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

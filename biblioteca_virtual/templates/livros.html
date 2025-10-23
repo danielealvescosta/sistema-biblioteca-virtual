@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Livros{% endblock %}
+{% block content %}
+<h2>Livros</h2>
+<table border="1">
+    <tr><th>Título</th><th>Autor</th><th>Ano</th><th>Ações</th></tr>
+    {% for livro in livros %}
+    <tr>
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ livro.ano }}</td>
+        <td>
+            <a href="{{ url_for('livros.editar_livro', id=livro.id) }}">Editar</a>
+            <form action="{{ url_for('livros.excluir_livro', id=livro.id) }}" method="post" style="display:inline;">
+                {{ csrf_token() }}
+                <button type="submit" onclick="return confirm('Excluir este livro?')">Excluir</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

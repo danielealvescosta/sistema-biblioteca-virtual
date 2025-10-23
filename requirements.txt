@@ -1,0 +1,8 @@
+flask
+flask_sqlalchemy
+flask_wtf
+flask_login
+wtforms
+python-dotenv
+pymysql
+psycopg2-binary

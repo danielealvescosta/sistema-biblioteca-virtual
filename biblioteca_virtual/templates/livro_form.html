@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Livro{% endblock %}
+{% block content %}
+<h2>{% if editar %}Editar{% else %}Novo{% endif %} Livro</h2>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.titulo.label }}<br>{{ form.titulo(size=40) }}</p>
+    <p>{{ form.autor.label }}<br>{{ form.autor(size=40) }}</p>
+    <p>{{ form.ano.label }}<br>{{ form.ano() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

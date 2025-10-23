@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Registrar Devolução{% endblock %}
+{% block content %}
+<h2>Registrar Devolução</h2>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.data_devolucao.label }}<br>{{ form.data_devolucao() }}
+    {% for error in form.data_devolucao.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Novo Empréstimo{% endblock %}
+{% block content %}
+<h2>Novo Empréstimo</h2>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.usuario.label }}<br>{{ form.usuario() }}</p>
+    <p>{{ form.livro.label }}<br>{{ form.livro() }}</p>
+    <p>{{ form.data_emprestimo.label }}<br>{{ form.data_emprestimo() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
